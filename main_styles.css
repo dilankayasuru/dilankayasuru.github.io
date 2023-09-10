@@ -1,0 +1,1459 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+    --main-brand-color: #027333;
+    --main-theme: #fff5db;
+    --main-background-color: #fff;
+    --table_color: #E7F2BD;
+
+    /* Fonts */
+    --paragraph-font: 'Manrope', sans-serif;
+    --heading-font: Georgia, 'Times New Roman', Times, serif;
+}
+
+html {
+    font-family: var(--paragraph-font);
+}
+
+h1,
+h2,
+h3 {
+    font-size: 2em;
+    font-weight: 500;
+    font-family: var(--heading-font);
+}
+
+p {
+    font-size: 0.92em;
+    letter-spacing: 1px;
+    line-height: 1.5em;
+}
+
+/* Nvigation bar */
+.main_header,
+.mobile_header {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 70px;
+    box-shadow: 5px 5px 20px #00000080;
+    background: #faf6edbe;
+    backdrop-filter: blur(20px);
+}
+
+/* logo */
+.main_header img {
+    height: 40px;
+}
+
+/* Navigation list */
+.main_nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2em;
+}
+
+.main_nav ul li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--main-brand-color);
+    transition: all .5s;
+    letter-spacing: 1.25px;
+}
+
+.main_nav ul:hover a {
+    opacity: 40%;
+}
+
+.main_nav ul:hover a:hover {
+    box-shadow: 0 2px 0 0 var(--main-brand-color);
+    opacity: 100%;
+}
+
+/* Book now button */
+.booknow_button {
+    text-decoration: none;
+    border: 1px solid var(--main-brand-color);
+    color: var(--main-brand-color);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: .7em 2em;
+    transition: all .5s;
+}
+
+.booknow_button:hover {
+    background: var(--main-brand-color);
+    color: var(--main-theme);
+}
+
+/* Mobile navigation bottom */
+
+.mobile_header {
+    justify-content: space-between;
+    padding: 0 1em;
+    display: none;
+}
+
+.mobile_header a img {
+    height: 35px;
+}
+
+.mobile_nav {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    height: 65px;
+    width: 100%;
+    background: #faf6ed;
+    padding: .5em 0;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 5px 5px 20px #00000080;
+}
+
+.mobile_nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.mobile_nav ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: .6em;
+    color: var(--main-brand-color);
+}
+
+#active a img {
+    position: relative;
+    top: -10px;
+    transform: scale(1.5);
+    background: #f9f4e7;
+    border-radius: 50% 50% 0 0;
+    padding: 1em 1em 0;
+}
+
+.nav_icon {
+    height: 35px;
+}
+
+/* Main heroo */
+.hero {
+    margin-top: -70px;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-background-color);
+}
+
+.hero h1 {
+    font-size: 5.5em;
+    padding-top: 2.5em;
+    text-align: center;
+}
+
+.home {
+    background-image: linear-gradient(rgb(0, 0, 0, .3) 30%, rgb(0, 0, 0, .7)), url(Images/home_main_image.webp);
+}
+
+.branches {
+    background-image: linear-gradient(rgb(0, 0, 0, .3) 30%, rgb(0, 0, 0, .7)), url(Images/branches_main.webp);
+}
+
+.adventures {
+    background-image: linear-gradient(rgb(0, 0, 0, .3) 30%, rgb(0, 0, 0, .7)), url(Images/adventure_main.webp);
+}
+
+.restaurants {
+    background-image: linear-gradient(rgb(0, 0, 0, .3) 30%, rgb(0, 0, 0, .7)), url(Images/restaurant_main.webp);
+}
+
+
+.hero img {
+    width: 600px;
+    padding-top: 13em;
+}
+
+.hero p {
+    font-size: 2em;
+    font-family: 'Italianno', cursive;
+}
+
+/* Styles for introduction section */
+
+.text_area {
+    text-align: center;
+    padding: 5em .5em;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+#last_section {
+    padding: .5em;
+}
+
+.text_area h1 {
+    font-size: 3em;
+    line-height: 2em;
+    font-weight: 500;
+}
+
+.detail_container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2em;
+    padding: 0 2em 3em;
+}
+
+.box img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    overflow: hidden;
+    box-shadow: 5px 5px 20px #00000080;
+    margin: 0 0 1em;
+    transition: all .5s;
+}
+
+.box {
+    text-align: center;
+    width: 400px;
+}
+
+.box img:hover {
+    transform: scale(1.02);
+}
+
+/* Content article */
+.content_article {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3em;
+    padding: 2em 4em;
+}
+
+.text_content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+}
+
+.image_content img {
+    width: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px #00000080;
+    perspective: 500px;
+    transition: all .5s;
+}
+
+.image_content img:hover {
+    transform: perspective(700px) rotateY(-2deg);
+}
+
+.content_article:nth-of-type(2n) .image_content img:hover {
+    transform: perspective(700px) rotateY(2deg);
+}
+
+.content_article:nth-of-type(2n) {
+    flex-direction: row-reverse;
+}
+
+#highlight_content {
+    background-color: var(--main-theme);
+}
+
+.list_section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list_section ul,
+.list_section ol {
+    line-height: 2em;
+}
+
+/* Branches page css */
+.branches_details,
+.adventure_det_location {
+    padding: 3em 2em;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.text_content figure figcaption {
+    text-align: center;
+    padding: .5em 0;
+    font-size: 17px;
+}
+
+.branches_details:nth-of-type(2n),
+.adventure_det_location:nth-of-type(2n) {
+    flex-direction: row-reverse;
+}
+
+.branches_details .text_content,
+.adventure_det_location .text_content {
+    min-width: 300px;
+    max-width: 600px;
+    padding: 0 2em;
+}
+
+.text_content iframe {
+    /* min-height: 250px; */
+    width: 100%;
+    margin: 1em 0 0;
+    box-shadow: 5px 5px 20px #00000080;
+}
+
+.branch_image {
+    height: 540px;
+}
+
+.branch_image img {
+    min-width: 300px;
+    width: 100%;
+    max-width: 550px;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 5px 5px 20px #00000080;
+}
+
+/* table */
+.table_section {
+    padding: 0 0 5em;
+    width: 90%;
+    margin-inline: auto;
+}
+
+.table_section h2 {
+    padding: 0 0 1em;
+    text-align: center;
+}
+
+table,
+tr,
+td,
+th {
+    border-collapse: collapse;
+    border: 1px solid #000;
+}
+
+table {
+    margin: 0 auto;
+}
+
+tr {
+    transition: all 0.3s;
+}
+
+tr:hover {
+    background-color: var(--main-theme);
+}
+
+th,
+td {
+    padding: 5px;
+    text-align: center;
+    padding: .5em .5em;
+}
+
+thead {
+    background-color: var(--table_color);
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.tfoot_icons img {
+    height: 25px;
+    padding: 0 1em 0;
+
+}
+
+tfoot {
+    background-color: var(--table_color);
+}
+
+.table_bottom {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 200px;
+}
+
+@media only screen and (max-width: 476px) {
+    .table_bottom {
+        display: block;
+    }
+}
+
+.table_section h2 {
+    text-align: center;
+    position: sticky;
+    left: 0;
+}
+
+
+/* ratings */
+.text_content img {
+    width: 150px;
+}
+
+/* adventure and showcase grid */
+.image_showcase {
+    text-align: center;
+    padding: 0;
+}
+
+.clock_icon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.grid_box {
+    box-shadow: 5px 5px 20px #00000080;
+}
+
+.photo_1 {
+    background: url(Images/hike_h1.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.photo_2 {
+    background: url(Images/camp_sunset.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.photo_3 {
+    background: url(Images/zipline.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.photo_4 {
+    background: url(Images/couple_hike.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.photo_5 {
+    background: url(Images/hike_v1.webp);
+    background-size: cover;
+    background-position: 80%;
+}
+
+.image_grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    margin-inline: auto;
+    min-height: 800px;
+    padding: 3em 1em 0;
+}
+
+.photo_1,
+.photo_4 {
+    grid-column: span 2;
+}
+
+.photo_5 {
+    grid-column-start: 4;
+    grid-row: 1 / 3;
+}
+
+/* adventure location map */
+.text_content ul {
+    margin: 0 auto;
+    letter-spacing: 1px;
+}
+
+.adventure_details img {
+    width: auto;
+    object-fit: contain;
+    height: 150px;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0 auto;
+    display: block;
+    transition: all .5s;
+}
+
+.adventure_details p {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.adventure_activites {
+    background: var(--main-theme);
+    padding: 3em 0 5em;
+}
+
+.adventure_activites h1 {
+    text-align: center;
+}
+
+.detail_cards {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 3em;
+    gap: 2em;
+}
+
+.card {
+    display: flex;
+    align-items: flex-end;
+    color: var(--main-background-color);
+
+    width: 100%;
+    min-width: 290px;
+    max-width: 300px;
+    height: 450px;
+
+    background-image: linear-gradient(#ffffff00 10%, #0000009e 70%), url(Images/zipline.webp);
+    background-position: center;
+    background-size: cover;
+    padding: 0 1em 2em;
+    border-radius: 25px;
+    box-shadow: 5px 5px 20px #00000080;
+    transition: all .5s;
+}
+
+.card:nth-of-type(2) {
+    background-image: linear-gradient(#ffffff00 10%, #0000009e 70%), url(Images/camp_v1.webp);
+}
+
+.card:nth-of-type(3) {
+    background-image: linear-gradient(#ffffff00 10%, #0000009e 70%), url(Images/hike_v1.webp);
+}
+
+.detail_cards:hover .card {
+    opacity: 50%;
+    transform: scale(1.01);
+}
+
+.detail_cards:hover .card:hover {
+    opacity: 100%;
+    transform: scale(1.05);
+}
+
+.card .important_details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .8em 0;
+
+}
+
+.important_details img {
+    width: 1.5em;
+}
+
+/* Restaurants */
+.occasions {
+    margin-bottom: 2em;
+}
+
+.occasions_container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2em;
+    padding: 1em;
+}
+
+.occasions header {
+    text-align: center;
+    padding: 0 .5em 1.5em;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.occasions header h2 {
+    padding: 0 0 .6em;
+}
+
+.event_1,
+.event_2 {
+    max-width: 400px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 20px #00000080;
+    overflow: hidden;
+    padding: 0 0 2em;
+}
+
+.event_1 figure,
+.event_2 figure {
+    width: 100%;
+    height: 200px;
+}
+
+.event_1 figure img,
+.event_2 figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event_intro {
+    padding: 1em .5em;
+}
+
+.event_intro p {
+    padding: 1em 0;
+}
+
+.event_1 a,
+.event_2 a,
+.text_content a {
+    text-decoration: none;
+    padding: .6em 1.5em;
+    border: 1px solid #000;
+    color: #000;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all .5s;
+    position: static;
+    left: 50%;
+    margin: 1em;
+
+}
+
+.event_1 a:hover,
+.event_2 a:hover,
+.text_content a:hover {
+    color: #fff;
+    background: #000;
+}
+
+.text_content a {
+    left: 0;
+    top: 30px;
+}
+
+.menu_highlights {
+    margin: 2.5em 0;
+}
+
+.menu_highlights h1 {
+    text-align: center;
+}
+
+.line {
+    height: 2px;
+    width: 100px;
+    background: #ff817a;
+    margin: 0 auto 1.5em;
+}
+
+.menu_link {
+    display: block;
+    margin: 0 auto;
+}
+
+.menu_highlights_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.menu_highlights_container>* {
+    flex: 1 1 33%;
+}
+
+.food {
+    min-width: 300px;
+}
+
+.food img {
+    position: relative;
+    width: 100%;
+}
+
+.menu_highlights_container div:nth-of-type(1) .food img {
+    top: 52px;
+    left: 35px;
+}
+
+.menu_highlights_container div:nth-of-type(3) .food img {
+    top: 62px;
+    left: -28px;
+    transform: rotate(-8deg);
+}
+
+.menu_highlights_container div:nth-of-type(4) .food img {
+    top: 104px;
+    left: -47px;
+    transform: scale(1.18);
+}
+
+.menu_highlights_container div:nth-of-type(5) .food img {
+    top: 37px;
+    left: -1px;
+    transform: scale(1.5);
+}
+
+.menus {
+    max-width: 300px;
+    box-shadow: 5px 5px 20px #00000080;
+    background: url(Images/texture.webp);
+    color: #fff;
+}
+
+.text_menu {
+    max-width: 300px;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5em;
+    font-weight: 600;
+    font-size: 1.12em;
+    background: linear-gradient(rgb(255, 255, 255, .8), rgb(255, 255, 255, .7), rgb(255, 255, 255, .8)), url(Images/menu_text.webp);
+    background-size: cover;
+}
+
+.res_table,
+.res_table tr,
+.res_table td,
+.res_table th {
+    border: none;
+}
+
+.res_table td {
+    text-align: left;
+}
+
+.res_table thead,
+.res_table tr {
+    background: none;
+}
+
+.res_table {
+    width: 100%;
+    margin: 0 .5em 1em;
+}
+
+/* booking page */
+.booking_main {
+    margin-top: -70px;
+    padding-top: 70px;
+    padding: 100px 2em;
+
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    flex-wrap: wrap;
+
+    background: linear-gradient(#faf6edbe, #faf6ed97), url(Images/booking_main.webp);
+    backdrop-filter: blur(20px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+}
+
+.booking_main>* {
+    flex: 1 1 50%;
+}
+
+.room_showcase {
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    flex-direction: column;
+}
+
+.showcase_text {
+    padding: 1.5em 0;
+    font-size: 1.1em;
+}
+
+.showcase_text h2 {
+    line-height: 1.5em;
+}
+
+.rooms {
+    max-width: 400px;
+    display: flex;
+    gap: 2em;
+    overflow-x: scroll;
+}
+
+.scroll_caption {
+    display: none;
+    margin-top: -15px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.room_details {
+    min-width: 100%;
+    background: var(--main-background-color);
+}
+
+.room_details figure img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.room_details {
+    margin-bottom: 1.5em;
+}
+
+.room_details .details {
+    padding: 1em;
+}
+
+.room_details .details ul {
+    padding: 2em;
+}
+
+.booking_form {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    max-width: 800px;
+    background: #0000003d;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    height: 100%;
+    box-shadow: 5px 5px 20px #00000080;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.form_image {
+    max-width: 250px;
+}
+
+.form_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: -150px;
+}
+
+.form_side {
+    color: var(--main-background-color);
+    padding: 2em 0;
+}
+
+.form_buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 1em .5em;
+}
+
+.form_buttons button {
+    width: 120px;
+    padding: .6em 0;
+    border: 1px solid #fff;
+    color: #fff;
+    outline: none;
+    font-size: .9em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: none;
+    transition: all .5s;
+}
+
+form button:hover {
+    color: #000;
+    background: #fff;
+}
+
+.input_box {
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.selection {
+    display: block;
+}
+
+.input_box label {
+    color: var(--main-background-color);
+    font-size: .92em;
+    letter-spacing: 1px;
+}
+
+.input_box select {
+    height: 33px;
+    border-radius: 25px;
+    background: rgb(0, 0, 0, 0.15);
+    backdrop-filter: blur(20px);
+    color: #fff;
+    --webkit-backdrop-filter: blur(20px);
+    padding: 0.5em;
+    border: none;
+    outline: none;
+}
+
+.input_box select option {
+    background: rgb(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+.adventure_booking,
+.room_booking {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.form_side form input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #000;
+    align-items: center;
+    background: none;
+    color: #fff;
+    padding: .5em;
+    font-size: 1em;
+}
+
+.form_side h3 {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.separator {
+    height: 1px;
+    width: 100%;
+    padding: 0 1em;
+    background: rgb(255, 255, 255, .3);
+    margin: 1em 0;
+}
+
+/* footer area */
+footer {
+    background: var(--main-theme);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3em;
+    padding: 2em .5em;
+}
+
+footer h3 {
+    font-size: 1.25em;
+    line-height: 1.5em;
+}
+
+.footer_logo img {
+    width: 300px;
+}
+
+.footer_text a {
+    color: #000;
+}
+
+.footer_nav ul {
+    list-style: none;
+}
+
+.footer_nav ul li a {
+    color: rgb(0, 0, 0, .6);
+    line-height: 2em;
+    text-decoration: none;
+    transition: all .4s;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.footer_nav ul li a:hover {
+    color: var(--main-brand-color);
+}
+
+/* Responsive for over 1024px device */
+
+@media only screen and (min-width: 1025px) {
+    .content_article {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #highlight_content {
+        width: 100%;
+        padding: 2.5em 10em;
+    }
+
+    .image_content img {
+        width: 500px;
+    }
+
+    .box img {
+        width: 300px;
+        height: 300px;
+    }
+
+    /* .image_content iframe {
+        width: 500px;
+    } */
+}
+
+@media only screen and (max-width: 890px) {
+    .mobile_header {
+        display: flex;
+        padding: 0 5em;
+    }
+
+    .mobile_nav {
+        display: block;
+    }
+
+    .main_header {
+        display: none;
+    }
+
+    .table_section {
+        width: 100%;
+    }
+    footer {
+        padding-bottom: 5em;
+    }
+
+}
+
+@media only screen and (max-width: 890px) and (min-width: 527px) {
+    .detail_container {
+        flex-direction: column;
+        gap: 5em;
+    }
+
+    .box:nth-of-type(even) {
+        flex-direction: row-reverse;
+    }
+
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5em;
+        width: 100%;
+        text-align: left;
+    }
+
+    .box img {
+        width: 100%;
+    }
+
+    .box p {
+        width: 100%;
+    }
+
+    .adventure_details p {
+        max-width: 350px;
+    }
+
+    .content_article {
+        padding: 2.5em;
+    }
+}
+
+@media only screen and (max-width: 773px) and (min-width: 550px) {
+
+    .content_article {
+        flex-direction: column;
+        padding: 5em 1.5em;
+    }
+
+    .content_article:nth-of-type(2n) {
+        flex-direction: column;
+    }
+
+    .image_content img {
+        width: calc(100vw - 2em);
+    }
+
+    .image_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photo_3,
+    .photo_5 {
+        grid-column-start: 1;
+        grid-row: span 2;
+    }
+
+    .photo_1,
+    .photo_4,
+    .photo_2 {
+        grid-column-start: 2;
+    }
+
+    .photo_1 {
+        grid-row-start: 1;
+    }
+
+    .photo_2 {
+        grid-row: 2 / 4;
+    }
+
+    .photo_4 {
+        grid-row-start: 4;
+    }
+
+    .photo_3 {
+        grid-row: 1 / 3;
+    }
+
+}
+
+@media only screen and (max-width: 690px) {
+    .hero {
+        background-position: 50%;
+    }
+
+    .hero img {
+        width: 500px;
+    }
+
+    .text_area,
+    #last_section {
+        padding: 2em;
+    }
+}
+
+/* ---------------------Branches table + maps-------------------- */
+@media only screen and (min-width: 280px) and (max-width: 780px) {
+    .table_section table {
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .table_section {
+        overflow-x: scroll;
+    }
+}
+
+@media only screen and (max-width: 790px) {
+
+    .branches_details,
+    .adventure_det_location {
+        flex-wrap: wrap-reverse;
+        gap: 2em;
+    }
+
+    .text_area h1 {
+        line-height: 1.5em;
+    }
+
+    .text_area {
+        padding-bottom: 0;
+    }
+
+    .occasions_container {
+        flex-wrap: wrap;
+    }
+
+    .text_content ul {
+        margin: 0 1.5em;
+
+    }
+}
+
+@media only screen and (max-width: 490px) {
+    .branch_image {
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width: 490px) {
+
+    .branches_details,
+    .adventure_det_location {
+        padding: 3em .5em;
+    }
+
+    .branch_image {
+        min-width: auto;
+    }
+}
+
+/* media quearies for smaller mobile sizes */
+
+@media only screen and (max-width: 550px) {
+    .mobile_header {
+        padding: 0 .5em;
+    }
+
+    header img {
+        height: 37px;
+    }
+
+    .booknow_button {
+        padding: .5em 1em;
+        font-size: .8em;
+    }
+
+    .hero {
+        background-position: 58%;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+        padding-top: 5em;
+    }
+
+    .hero img {
+        width: 300px;
+        padding: 0;
+    }
+
+    .hero p {
+        font-size: 1.5em;
+    }
+
+    .text_area {
+        padding: 1em .5em 4em;
+    }
+
+    .text_area h1 {
+        font-size: 2.5em;
+    }
+
+    .detail_container {
+        flex-direction: column;
+        gap: 5em;
+        padding: 0 .5em 3em;
+    }
+
+    .box {
+        width: auto;
+    }
+
+    .content_article {
+        flex-direction: column;
+        padding: 2em 1.5em;
+    }
+
+    .content_article:nth-of-type(2n) {
+        flex-direction: column;
+    }
+
+    .image_content img {
+        width: 300px;
+        border-radius: 0;
+    }
+
+    #last_section {
+        padding: 2em 1em;
+    }
+
+    #last_section h1 {
+        font-size: 2em;
+    }
+
+    .image_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photo_1 {
+        grid-row-start: 2;
+        grid-column: span 2;
+    }
+
+    .photo_2,
+    .photo_3 {
+        grid-row-start: 1;
+    }
+
+    .photo_3 {
+        grid-column-start: 1;
+    }
+
+    .photo_4,
+    .photo_5 {
+        grid-row-start: 3;
+    }
+
+    .photo_5 {
+        grid-column-start: 1;
+    }
+
+    .photo_4 {
+        grid-column-start: 2;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .image_grid {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .grid_box {
+        min-width: 300px;
+        height: 300px;
+    }
+
+    .image_showcase h1 {
+        padding: 0 .5em 0;
+    }
+
+    .image_grid {
+        padding: 2em 0;
+    }
+}
+
+/* Resturant food png styles */
+@media only screen and (max-width: 760px) {
+    .food img {
+        width: 270px;
+        top: 0;
+        left: 0;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    .text_menu {
+        order: -1;
+    }
+
+    .rooms::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scroll_caption {
+        display: block;
+    }
+
+}
+
+@media only screen and (max-width: 1160px) {
+    .room_showcase {
+        order: -1;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .rooms {
+        width: 100%;
+    }
+
+    .form_buttons {
+        gap: .5em;
+    }
+}
+
+@media only screen and (max-width: 995px) {
+    .food img {
+        width: 200px;
+        flex-shrink: 2;
+    }
+
+    .menu_highlights_container div:nth-of-type(1) .food img {
+        top: 31px;
+        left: 120px;
+    }
+
+    .menu_highlights_container div:nth-of-type(3) .food img {
+        top: 44px;
+        left: 59px;
+        transform: rotate(0deg) scale(1.18);
+    }
+
+    .menu_highlights_container div:nth-of-type(4) .food img {
+        top: 22px;
+        left: 37px;
+        transform: scale(1.2);
+    }
+
+    .menu_highlights_container div:nth-of-type(5) .food img {
+        left: 30px;
+    }
+
+}
+
+@media only screen and (max-width: 663px) {
+    .food img {
+        position: static;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .food {
+        width: 100%;
+    }
+
+    .food img {
+        width: 200px;
+    }
+
+    .menus,
+    .text_menu {
+        overflow: hidden;
+        min-width: 250px;
+    }
+
+    .image_content img {
+        width: 100%;
+    }
+
+    .footer_logo img {
+        width: 100%;
+    }
+
+    .box img {
+        width: 200px;
+    }
+
+    .hero {
+        padding: 0.5em;
+        text-align: center;
+    }
+
+    .hero img {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+
+    .adventure_booking,
+    .room_booking {
+        grid-template-columns: 1fr;
+    }
+
+    .booking_main {
+        padding: 100px .5em;
+    }
+}
