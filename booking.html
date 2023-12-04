@@ -24,6 +24,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="main.js" defer></script>
 </head>
 
 <body>
@@ -92,143 +99,184 @@
             </div>
 
             <div class="form_side">
-                <form>
+                <form id="booking_form">
                     <h3>Book your stay</h3>
                     <div class="room_booking">
 
                         <div class="input_box">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="user-name" required>
+                            <label for="user_name">Name</label>
+                            <input type="text" id="user_name" required>
                         </div>
 
                         <div class="input_box">
-                            <label for="mail">Email</label>
-                            <input type="email" id="mail" name="email" required>
+                            <label for="user_email">Email</label>
+                            <input type="email" id="user_email" required>
                         </div>
 
                         <div class="input_box">
                             <label for="address">Address</label>
-                            <input type="text" id="address" name="address">
+                            <input type="text" id="address">
                         </div>
 
                         <div class="input_box">
                             <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="Phone-number" placeholder="07X-XXX-XXXX" required>
+                            <input type="tel" id="phone" placeholder="07X-XXX-XXXX" required>
                         </div>
 
                         <div class="input_box">
                             <label for="stay">Select stay</label>
                             <select id="stay" name="stay">
-                                <option value="Ella">Emerald Ella</option>
-                                <option value="badulla">Emerald Badulla</option>
-                                <option value="Mathale">Emerald Mathale</option>
-                                <option value="Ella">Emerald Ella</option>
+                                <option value="Emerald Ella" selected>Emerald Ella</option>
+                                <option value="Emerald Badulla">Emerald Badulla</option>
+                                <option value="Emerald Haputhale">Emerald Haputhale</option>
+                                <option value="Emerald Mathale">Emerald Mathale</option>
                             </select>
                         </div>
 
                         <div class="input_box selection">
                             <p>Select room type</p>
-                            <input type="radio" id="single" name="room-type">
+                            <input type="checkbox" id="single" name="room_type" value="single">
                             <label for="single">Single Room</label>
+                            <div class="num-of-rooms num-single">
+                                <label for="single_room_num">Number of Single Rooms</label><br>
+                                <input type="number" id="single_room_num" min="0" value="0">
+                            </div>
                             <br>
-                            <input type="radio" id="double" name="room-type">
-                            <label for="double">Double Room</label>
                             <br>
-                            <input type="radio" id="family" name="room-type">
-                            <label for="family">Family Room</label>
-                        </div>
 
+                            <input type="checkbox" id="double" name="room_type" value="double">
+                            <label for="double">Double Room</label>
+                            <div class="num-of-rooms num-double">
+                                <label for="double_room_num">Number of Double Rooms</label><br>
+                                <input type="number" id="double_room_num" min="0">
+                            </div>
+                            <br>
+                            <br>
+
+                            <input type="checkbox" id="triple" name="room_type" value="triple">
+                            <label for="triple">Triple Room</label>
+                            <div class="num-of-rooms num-triple">
+                                <label for="triple_room_num">Number of Triple Rooms</label><br>
+                                <input type="number" id="triple_room_num" min="0" value="0">
+                            </div>
+                        </div>
+                        <!-- 
                         <div class="input_box">
                             <label for="room_count">Number of Rooms</label>
                             <input type="number" min="1" id="room_count" name="room-count" required>
-                        </div>
+                        </div> -->
 
                         <div class="input_box">
                             <label for="adult">Number of Adults</label>
-                            <input type="number" min="0" id="adult" name="adult-count">
+                            <input type="number" min="0" id="adult">
                         </div>
 
                         <div class="input_box">
-                            <label for="kids">Number of Children</label>
-                            <input type="number" min="0" id="kids" name="kids-count">
+                            <label for="kids">Number of Children (Above 5 years)</label>
+                            <input type="number" min="0" id="kids">
                         </div>
 
                         <div class="input_box">
                             <label for="checkin">Check in Date</label>
-                            <input type="date" id="checkin" name="checkin" required>
+                            <input type="date" id="checkin" required>
                         </div>
 
                         <div class="input_box">
                             <label for="checkout">Check out Date</label>
-                            <input type="date" id="checkout" name="checkout" required>
+                            <input type="date" id="checkout" required>
                         </div>
 
                         <div class="input_box selection">
                             <p>Add Extra Amenities</p>
 
-                            <input type="checkbox" id="fridge" name="amenities">
-                            <label for="fridge">Mini-Fridge</label>
+                            <input type="checkbox" id="wifi" name="extra_req">
+                            <label for="wifi">Wi-Fi</label>
                             <br>
-                            <input type="checkbox" id="gym" name="amenities">
-                            <label for="gym">Fitness Center</label>
+                            <input type="checkbox" id="pool_view" name="extra_req">
+                            <label for="pool_view">Pool View</label>
                             <br>
-                            <input type="checkbox" id="balcony" name="amenities">
-                            <label for="balcony">Private Balcony</label>
+                            <input type="checkbox" id="garden_view" name="extra_req">
+                            <label for="garden_view">Garden View</label>
                             <br>
-                            <input type="checkbox" id="entertainment" name="amenities">
-                            <label for="entertainment">TV</label>
+                            <input type="checkbox" id="extra_bed" name="extra_req" value="extraBed">
+                            <label for="extra_bed">Extra Beds</label>
+                            <div class="num-of-beds">
+                                <label for="num_of_beds">Number of Extra Beds</label><br>
+                                <input type="number" id="num_of_beds" min="0" value="0">
+                            </div>
                             <br>
-                            <input type="checkbox" id="spa" name="amenities">
-                            <label for="spa">Spa Treatments</label>
                         </div>
 
-                    </div>
-
-                    <div class="separator"></div>
-
-                    <h3>Adventure Activities</h3>
-                    <div class="adventure_booking">
-
-                        <div class="input_box selection">
-                            <p>Activities</p>
-
-                            <input type="checkbox" id="zipline" name="adventure_activity">
-                            <label for="zipline">Zip Line</label>
-                            <br>
-                            <input type="checkbox" id="camping" name="adventure_activity">
-                            <label for="camping">Camping</label>
-                            <br>
-                            <input type="checkbox" id="hiking" name="adventure_activity">
-                            <label for="hiking">Hiking</label>
-                        </div>
-
-                        <div class="input_box selection">
-                            <p>Select a time slot</p>
-                            <input type="radio" id="morning" name="time">
-                            <label for="morning">9.00 am - 11.00 am</label>
-                            <br>
-                            <input type="radio" id="afternoon" name="time">
-                            <label for="afternoon">11.00 am - 1.30 pm</label>
-                            <br>
-                            <input type="radio" id="evening" name="time">
-                            <label for="evening">1.30 pm - 4.00 pm</label>
-                        </div>
-
-                        <div class="input_box">
-                            <label for="adventure-adult">Number of Adults</label>
-                            <input type="number" min="0" id="adventure-adult" name="adult-count">
-                        </div>
-
-                        <div class="input_box">
-                            <label for="adventure-kids">Number of Children</label>
-                            <input type="number" min="0" id="adventure-kids" name="kids-count">
+                        <div class="promocode input_box">
+                            <label for="promocode">Apply PromoCode</label>
+                            <input type="text" id="promocode" placeholder="Promo Code">
                         </div>
 
                     </div>
 
                     <div class="form_buttons">
-                        <button type="reset">Clear All</button>
-                        <button type="submit">BOOK NOW</button>
+                        <div>
+                            <p id="output"></p>
+                            <p id="loyaltyPoints"></p>
+                            <button type="button" id="loyaltyPointsCheck">Check Loyalty</button>
+                        </div>
+                        <button type="submit" id="book_now">BOOK NOW</button>
+                    </div>
+
+                    <div class="separator"></div>
+
+                    <h3>Adventure Activities (Diving)</h3>
+                    <div class="adventure_booking">
+
+                        <div class="input_box selection">
+                            <p>Guide</p>
+                            <div>
+                                <input type="radio" name="guide" id="with_guide" value="withGuide">
+                                <label for="with_guide">With Guide</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="guide" id="non_guide" value="withoutGuide">
+                                <label for="non_guide">With out Guide</label>
+                            </div>
+                        </div>
+
+                        <div class="input_box selection">
+                            <p>Select a time slot</p>
+                            <input type="radio" id="morning" name="time">
+                            <label for="morning">9.00 am - 10.00 am</label>
+                            <br>
+                            <input type="radio" id="afternoon" name="time">
+                            <label for="afternoon">11.00 am - 12.00 pm</label>
+                            <br>
+                            <input type="radio" id="evening" name="time">
+                            <label for="evening">1.30 pm - 2.30 pm</label>
+                        </div>
+
+                        <div class="input_box">
+                            <label for="adv_local_adults">Number of Adults (Local)</label>
+                            <input type="number" min="0" id="adv_local_adults" name="adult-count">
+                        </div>
+
+                        <div class="input_box">
+                            <label for="adv_local_kids">Number of Children (Local)</label>
+                            <input type="number" min="0" id="adv_local_kids" name="kids-count">
+                        </div>
+
+                        <div class="input_box">
+                            <label for="adv_foreign_adults">Number of Adults (Foreign)</label>
+                            <input type="number" min="0" id="adv_foreign_adults" name="kids-count">
+                        </div>
+
+                        <div class="input_box">
+                            <label for="adv_foreign_kids">Number of Children (Foreign)</label>
+                            <input type="number" min="0" id="adv_foreign_kids" name="kids-count">
+                        </div>
+
+                    </div>
+
+                    <div class="form_buttons">
+                        <p id="advCost"></p>
+                        <button type="button" id="adv_booking">Book Adventure</button>
                     </div>
                 </form>
             </div>
@@ -315,6 +363,140 @@
 
     </main>
 
+    <div id="bluredBackground" class="bluredBackground hideBackgroundBlur"></div>
+
+    <div id="hotelConfirm" class="hotel_confirmation popupHidden">
+        <div class="confirmation_wrap">
+            <div class="check-mark"><i class="fa-solid fa-check"></i></div>
+            <div id="hotelClose" class="close">Close</div>
+            <div class="booking-date">
+                <p><span>Emerald Ella</span> is reserved for you</p>
+                <div class="show-date">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <span>2023/15/15</span> - <span>2023/15/15</span>
+                </div>
+            </div>
+            <div class="booking-summary">
+                <div>
+                    <p>Name</p>
+                    <p>Dilanka</p>
+                </div>
+                <div>
+                    <p>Adults</p>
+                    <p>15</p>
+                </div>
+                <div>
+                    <p>Kids</p>
+                    <p>2</p>
+                </div>
+                <div>
+                    <p>Rooms</p>
+                    <p>15</p>
+                </div>
+            </div>
+            <div class="booking-total">
+                <div>
+                    <p></span>Single Room</span> x 2</p>
+                    <p>Rs. <span>50000</span></p>
+                </div>
+                <div>
+                    <p></span>Single Room</span> x 2</p>
+                    <p>Rs. <span>50000</span></p>
+                </div>
+                <div>
+                    <p></span>Single Room</span> x 2</p>
+                    <p>Rs. <span>50000</span></p>
+                </div>
+                <div>
+                    <p></span>Wi-Fi</span></p>
+                    <p><span>Free</span></p>
+                </div>
+                <div>
+                    <p>Discount </span>"Promo123"</span></p>
+                    <p>- Rs. <span>520</span></p>
+                </div>
+                <div class="separator"></div>
+                <div class="total">
+                    <p>Total</p>
+                    <p id="total">Rs. 750000</p>
+                </div>
+                <div class="separator"></div>
+                <div>
+                    <p>Earned Loyalty Points: <span>25</span></p>
+                </div>
+            </div>
+            <div class="booking-thankyou">
+                <p>Thank you for Choosing us!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="advConfirm" class="hotel_confirmation popupHidden">
+        <div class="confirmation_wrap">
+            <div class="check-mark"><i class="fa-solid fa-check"></i></div>
+            <div class="booking-date adv-booking">
+                <p>Thanks for booking our diving adventure!</p>
+                <div class="show-date">
+                    <span>Get ready for an amazing underwater adventure!</span>
+                    <br><br>
+                    <i class="fa-regular fa-clock"></i>
+                    <span>9.00 am - 10.00am</span>
+                </div>
+            </div>
+            <div class="booking-total">
+                <div>
+                    <p></span>Local Adults</span> x 2</p>
+                    <p>Rs. <span>50000</span></p>
+                </div>
+                <div>
+                    <p></span>Local Kids</span> x 2</p>
+                    <p>Rs. <span>50000</span></p>
+                </div>
+                <div>
+                    <p></span>Foreign Adults</Address></span> x 2</p>
+                    <p>Rs. <span>50000</span></p>
+                </div>
+                <div>
+                    <p></span>Foreign Kids</Address></span> x 2</p>
+                    <p>Rs. <span>50000</span></p>
+                </div>
+                <div>
+                    <p></span>Guide for Adults</span> x 2</p>
+                    <p>Rs. <span>50000</span></p>
+                </div>
+                <div>
+                    <p></span>Guide for Kids</span> x 2</p>
+                    <p>Rs. <span>50000</span></p>
+                </div>
+                <div class="separator"></div>
+                <div class="total">
+                    <p>Total</p>
+                    <p id="total">Rs. 750000</p>
+                </div>
+            </div>
+            <div class="done-button">
+                <button type="button" id="done">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="popupLol" class="loyaltywindow popupHidden">
+        <div class="loyaltywindow-wrapper">
+            <div class="star">
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="loyaltypointText">
+                <p>You will be earned <span>80</span> loyalty Points from this reservation</p>
+                <p>Your total loyalty points will be <span>180</span> points</p>
+            </div>
+            <div class="availablePonitsBox">
+                <p id="pointsAvailable">100</p>
+                <p>Available Points</p>
+            </div>
+            <i class="fa-solid fa-xmark" id="loyaltyClose"></i>
+        </div>
+    </div>
+    <!-- popupShow -->
     <footer>
         <section class="footer_text">
             <h3>Contact Us</h3>
