@@ -212,7 +212,7 @@
 
                     <div class="form_buttons">
                         <div>
-                            <p>Total Cost: <span id="outputTotal"></span></p>
+                            <p>Total Cost: Rs. <span id="outputTotal"></span></p>
                             <p class="loyalty">Your Loyalty Points: <span id="loyaltyPoints"></span></p>
                             <button type="button" id="loyaltyPointsCheck">Check Loyalty</button>
                         </div>
@@ -223,12 +223,11 @@
                     </div>
 
                     <div class="separator"></div>
-
+                </form>
+                <form id="advBooking_form">
                     <h3>Adventure Activities (Diving)</h3>
                     <div class="adventure_booking">
 
-                        <!--  -->
-                        
                         <div class="input_box">
                             <label for="advBookingName">Name</label>
                             <input type="text" id="advBookingName" required>
@@ -238,8 +237,6 @@
                             <label for="advBookingPhone">Phone</label>
                             <input type="tel" min="0" id="advBookingPhone" placeholder="07X-XXX-XXXX" required>
                         </div>
-
-                        <!--  -->
 
                         <div class="input_box selection">
                             <p>Guide</p>
@@ -267,29 +264,39 @@
 
                         <div class="input_box">
                             <label for="adv_local_adults">Number of Adults (Local)</label>
-                            <input type="number" min="0" id="adv_local_adults">
+                            <input type="number" min="0" id="adv_local_adults" value="0">
                         </div>
 
                         <div class="input_box">
                             <label for="adv_local_kids">Number of Children (Local)</label>
-                            <input type="number" min="0" id="adv_local_kids">
+                            <input type="number" min="0" id="adv_local_kids" value="0">
                         </div>
 
                         <div class="input_box">
                             <label for="adv_foreign_adults">Number of Adults (Foreign)</label>
-                            <input type="number" min="0" id="adv_foreign_adults">
+                            <input type="number" min="0" id="adv_foreign_adults" value="0">
                         </div>
 
                         <div class="input_box">
                             <label for="adv_foreign_kids">Number of Children (Foreign)</label>
-                            <input type="number" min="0" id="adv_foreign_kids">
+                            <input type="number" min="0" id="adv_foreign_kids" value="0">
                         </div>
 
+                        <div class="input_box">
+                            <label for="advDate">Date</label>
+                            <input type="date" id="advDate">
+                        </div>
+
+                        <p class="advCost">Total Cost: Rs. <span id="advCost"></span></p>
                     </div>
 
                     <div class="form_buttons">
-                        <p id="advCost"></p>
-                        <button type="button" id="adv_booking">Book Adventure</button>
+                        <div>
+                            <button type="button" id="advApplyFav">Apply Favourites</button>
+                        </div>
+                        <div>
+                            <button type="button" id="adv_booking">Book Adventure</button>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -420,7 +427,8 @@
                 <div class="separator"></div>
                 <div>
                     <p>Earned Loyalty Points: <span id="loyaltyPointsOutput"></span></p>
-                    <button type="button" id="addToFav">Add to favourites <i class="fa-solid fa-heart"></i></button>
+                    <button type="button" id="addToFav" class="addtofavBtn">Add to favourites <i
+                            class="fa-solid fa-heart"></i></button>
                 </div>
             </div>
             <div class="booking-thankyou">
@@ -439,6 +447,11 @@
                     <br><br>
                     <i class="fa-regular fa-clock"></i>
                     <span id="timeSlotOutput"></span>
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <span id="advDateOutput"></span>
+                    <br>
+                    <br>
+                    <span id="advCustomerName"></span>
                 </div>
             </div>
             <div class="booking-total">
@@ -452,6 +465,8 @@
                 </div>
             </div>
             <div class="done-button">
+                <button type="button" id="addToFavAdv" class="addtofavBtn">Add to favourites <i
+                        class="fa-solid fa-heart"></i></button>
                 <button type="button" id="done">Done</button>
             </div>
         </div>
@@ -463,7 +478,8 @@
                 <i class="fa-solid fa-star"></i>
             </div>
             <div class="loyaltypointText">
-                <p>You will be rewarded by <span id="loyaltyPointsToearn"></span> loyalty Points from this reservation</p>
+                <p>You will be rewarded by <span id="loyaltyPointsToearn"></span> loyalty Points from this reservation
+                </p>
                 <p>Your total loyalty points will be <span id="totalLoyaltyPoints"></span> points</p>
             </div>
             <div class="availablePonitsBox">
