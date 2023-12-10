@@ -536,20 +536,27 @@ function validateForm() {
     const checkOut = new Date(checkOutDate.value);
 
     if (!(userName)) {
+        customerName.focus();
         alert("Please enter your Name");
     } else if (!(userEmail)) {
+        customerEmail.focus();
         alert("Please enter your email address");
     } else if (!(userNumber)) {
+        customerPhone.focus();
         alert("Please enter your mobile number");
     } else if (!(roomType)) {
         alert("Please select a room type");
     } else if (!(adults) || adults == 0) {
+        numOfAdults.focus();
         alert("Please enter number of adults");
     } else if (!(checkIn > new Date())) {
+        checkInDate.focus();
         alert("Please enter a valid check in date");
     } else if (!(checkOut > new Date())) {
+        checkOutDate.focus();
         alert("Please enter a valid check out date");
     } else if (checkIn >= checkOut) {
+        checkInDate.focus();
         alert("Check out date can not be older than check in date");
     } else {
         validated = true;
@@ -565,6 +572,8 @@ function validateRoomType() {
         if (element.checked) {
             console.log(element.value)
             roomtypeSelected = true;
+        } else {
+            element.focus();
         }
     })
     return roomtypeSelected;
@@ -572,7 +581,7 @@ function validateRoomType() {
 
 
 // --------------------------------------------------------------------------------------------------------------------
-// *********************************Adventure Booking Calculations starting from here *********************************
+// ******************************** Adventure Booking Calculations starting from here *********************************
 // --------------------------------------------------------------------------------------------------------------------
 
 
@@ -665,15 +674,23 @@ function isAdvFormValidated() {
 
     // Checking null data to validate user input
     if (!(userName)) {
+        advBookingName.focus();
         alert("Please enter your Name");
     } else if (!(userNumber)) {
+        advBookingPhone.focus();
         alert("Please enter your mobile number");
     } else if (!(timeSlot)) {
         alert("Please select a time slot")
     } else if (guests <= 0) {
+        advLocalAdultsNum.focus();
         alert("Please enter number of Guests");
     } else if (!(date)) {
+        advDate.focus();
         alert("Please enter the date");
+    } else if (new Date() > new Date(date)) {
+        advDate.focus();
+        advDate.value = "";
+        alert("Please enter a valid date! Date can not be past");
     } else {
         validated = true;
         console.log("Validation Done!");
@@ -690,6 +707,8 @@ function validateTimeSlot() {
     advTime.forEach(element => {
         if (element.checked) {
             timeSelected = true;
+        } else {
+            element.focus();
         }
     })
     return timeSelected;
