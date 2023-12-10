@@ -60,7 +60,7 @@ const addToFavBtn = document.getElementById("addToFav");
 // Buttons on html
 const checkLoyaltyBtn = document.getElementById("loyaltyPointsCheck");
 const hotelBookNowBtn = document.getElementById("book_now");
-const applyFavouritesBtn = document.getElementById("applyFav");
+const applyFavoritesBtn = document.getElementById("applyFav");
 
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -199,7 +199,7 @@ hotelBookingSummaryClose.addEventListener("click", () => {
 addToFavBtn.addEventListener("click", storeDataInLocalStorage)
 
 // Get data from local storage and apple
-applyFavouritesBtn.addEventListener("click", applyFavourites)
+applyFavoritesBtn.addEventListener("click", applyFavorites)
 
 
 
@@ -477,8 +477,8 @@ function storeDataInLocalStorage() {
     localStorage.setItem("bookingData", JSON.stringify(bookingData));
 }
 
-// Apply favourites to the booking
-function applyFavourites() {
+// Apply favorites to the booking
+function applyFavorites() {
     const bookingData = JSON.parse(localStorage.getItem('bookingData'));
 
     if (!(Object.is(bookingData, null))) {
@@ -519,7 +519,7 @@ function applyFavourites() {
             })
         })
         calculateHotelCost();
-    } else alert("You haven't saved any favourites!");
+    } else alert("You haven't saved any favorites!");
 
 }
 
@@ -598,7 +598,7 @@ guideSelection.forEach(element => element.addEventListener("change", () => {
             localKidsPrice = 2500;
             foreignAdultsPrice = 11000;
             foreignKidsPrice = 5500;
-            console.log("Checked")
+            console.log("Checked");
             guide = true;
             calculateAdvCost();
         } else {
@@ -606,7 +606,7 @@ guideSelection.forEach(element => element.addEventListener("change", () => {
             localKidsPrice = 2000;
             foreignAdultsPrice = 10000;
             foreignKidsPrice = 5000;
-            console.log("unchecked")
+            console.log("unchecked");
             guide = false;
             calculateAdvCost();
         }
@@ -653,7 +653,7 @@ advPopupClose.addEventListener("click", () => {
 addToFavAdv.addEventListener("click", storeAdvBookingData);
 
 // Apply adventure booking data to the form by getting data from the local storage
-advApplyFav.addEventListener("click", applyAdvFavourites);
+advApplyFav.addEventListener("click", applyAdvFavorites);
 
 
 // Calculate total cost of addventure booking
@@ -817,8 +817,8 @@ function storeAdvBookingData() {
     localStorage.setItem("advBooking", JSON.stringify(bookingData));
 }
 
-// Apply favourites to the booking
-function applyAdvFavourites() {
+// Apply favorites to the booking
+function applyAdvFavorites() {
     // Getting data from the local storage
     const bookingData = JSON.parse(localStorage.getItem('advBooking'));
 
@@ -836,14 +836,14 @@ function applyAdvFavourites() {
         const guideSelected = bookingData.guide;
 
 
-        // Select time slot from favourites
+        // Select time slot from favorites
         advTime.forEach(element => {
             if (element.value == timeSelected) {
                 element.checked = true;
             }
         });
 
-        // Selecte guide choice from favourites
+        // Selecte guide choice from favorites
         guideSelection.forEach(element => {
             // Select with guide
             if (element.value == "withGuide" && guideSelected) {
@@ -856,6 +856,6 @@ function applyAdvFavourites() {
         })
 
         calculateAdvCost();
-    } else alert("You haven't saved any favourites!");
+    } else alert("You haven't saved any favorites!");
     // trow an alert if the value is not saved in the local storage
 }
