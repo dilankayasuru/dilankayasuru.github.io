@@ -232,6 +232,7 @@ function initialliseAdvForm() {
     foreignAdultsPrice = 10000;
     foreignKidsPrice = 5000;
     selectedAdvTime = "";
+    advCostDisplay.innerText = "0";
 }
 
 // Calculate total cost of booking
@@ -530,6 +531,7 @@ function validateForm() {
     let userName = customerName.value;
     let userEmail = customerEmail.value;
     let userNumber = customerPhone.value;
+    let userAddress = customerAddress.value;
     let roomType = validateRoomType();
     let adults = numOfAdults.value;
     const checkIn = new Date(checkInDate.value);
@@ -541,9 +543,12 @@ function validateForm() {
     } else if (!(userEmail)) {
         customerEmail.focus();
         alert("Please enter your email address");
-    } else if (!(userNumber)) {
+    } else if (!(userAddress)) {
+        customerAddress.focus();
+        alert("Please enter your address");
+    } else if (!(userNumber) || isNaN(userNumber)) {
         customerPhone.focus();
-        alert("Please enter your mobile number");
+        alert("Please enter a valid phone number");
     } else if (!(roomType)) {
         alert("Please select a room type");
     } else if (!(adults) || adults == 0) {
@@ -676,9 +681,9 @@ function isAdvFormValidated() {
     if (!(userName)) {
         advBookingName.focus();
         alert("Please enter your Name");
-    } else if (!(userNumber)) {
+    } else if (!(userNumber) || isNaN(userNumber)) {
         advBookingPhone.focus();
-        alert("Please enter your mobile number");
+        alert("Please enter a valid phone number");
     } else if (!(timeSlot)) {
         alert("Please select a time slot")
     } else if (guests <= 0) {
