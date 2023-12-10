@@ -520,7 +520,6 @@ function applyFavorites() {
         })
         calculateHotelCost();
     } else alert("You haven't saved any favorites!");
-
 }
 
 // Validate HTML Form input
