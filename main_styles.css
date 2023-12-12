@@ -755,10 +755,10 @@ tfoot {
     text-align: left;
 }
 
-/* .res_table thead,
+.res_table thead,
 .res_table tr {
     background: none;
-} */
+}
 
 .res_table {
     width: 100%;
