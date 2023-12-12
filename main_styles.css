@@ -727,7 +727,7 @@ tfoot {
 .menus {
     max-width: 300px;
     box-shadow: 5px 5px 20px #00000080;
-    background: url(Images/texture.webp);
+    background: url(Images/texture.webp) rgb(0, 0, 0);
     color: #fff;
 }
 
