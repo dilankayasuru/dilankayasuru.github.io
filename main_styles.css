@@ -1810,3 +1810,9 @@ footer h3 {
     border-radius: 10px;
     box-shadow: 0 0 25px rgb(0, 0, 0, .3);
 }
+
+@media only screen and (max-width : 562px)  {
+    .hotelButtons {
+        flex-direction: column;
+    }
+}
