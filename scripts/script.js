@@ -847,6 +847,10 @@ function applyAdvFavorites() {
             // Select with guide
             if (element.value == "withGuide" && guideSelected) {
                 element.checked = true;
+                localAdultsPrice = 6000;
+                localKidsPrice = 2500;
+                foreignAdultsPrice = 11000;
+                foreignKidsPrice = 5500;
             }
             // Additional (Select with out guide)
             if (element.value == "withoutGuide" && !guideSelected) {
